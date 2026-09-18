@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.1.0",
-  "description": "Staging scaffold for the Vogon Partners OÜ public website. Scaffold ≠ publish.",
+  "description": "Public website for Vogon Partners OÜ.",
   "engines": {
     "node": ">=22.12.0"
   },

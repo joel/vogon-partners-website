@@ -2,9 +2,11 @@
 
 Static Astro site for **Vogon Partners OÜ**.
 
-**This scaffold is not a publish.** Staging implementation only. No public DNS, ads, analytics, or go-live. External launch needs a separate written Owner approval.
+Owner approved go-live on **2026-09-18**. This repo is the public site source. DNS and Cloudflare Pages binding are handled outside the repo.
 
-Canonical page meaning comes from Brand **`public-copy-v1`**, plus Owner HA/security/compliance copy (2026-09-18). Implementers must not invent claims, client names, pricing, ROI, or live Trip URLs.
+Canonical page meaning comes from Brand **`public-copy-v1`**, plus Owner HA/security/compliance copy (2026-09-18). Do not invent claims, client names, pricing, ROI, or a live Trip URL.
+
+History: the first scaffold commits were staging-only (noindex, no public DNS). That posture ended with Owner go-live approval.
 
 ## Run locally
 
@@ -24,9 +26,7 @@ npm run preview
 
 `npm run build` writes static files to **`dist/`**.
 
-## Cloudflare Pages (staging)
-
-Do **not** bind a production custom domain. Preview / `*.pages.dev` only until Owner go-live approval.
+## Cloudflare Pages
 
 | Setting | Value |
 | --- | --- |
@@ -35,8 +35,6 @@ Do **not** bind a production custom domain. Preview / `*.pages.dev` only until O
 | Output directory | `dist` |
 | Node version | `22` (or current LTS ≥ 22.12) |
 | Root directory | repository root |
-
-No Wrangler production routes or custom-domain config are included on purpose.
 
 ## Routes
 
@@ -61,8 +59,7 @@ Primary nav: Home · Services · Showroom · Insights · Contact.
 - Trip live URL / demo CTA
 - Legal pages beyond the minimal footer
 - Analytics, cookie banners, ads
-- Production custom domain / public DNS
-- Screenshots and architecture diagrams (text-first staging)
+- Screenshots and architecture diagrams (text-first)
 - Site B / second-household identity, occupant names, device counts
 - Deeper smart-environment project documentation
 - Compliance consulting as a live offer (teaser only)

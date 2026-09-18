@@ -6,4 +6,6 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
+  // Keep spaces around inline links and <span> so public copy does not run together.
+  compressHTML: false,
 });

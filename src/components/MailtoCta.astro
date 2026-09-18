@@ -1,0 +1,15 @@
+---
+import { email, mailto, mailtoWithSubject } from '../data/site';
+
+interface Props {
+  subject?: string;
+  label?: string;
+}
+
+const { subject, label = `Start a conversation: ${email}` } = Astro.props;
+const href = subject ? mailtoWithSubject(subject) : mailto;
+---
+
+<p class="cta-row">
+  <a class="button" href={href}>{label}</a>
+</p>

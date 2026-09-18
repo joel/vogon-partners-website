@@ -1,0 +1,19 @@
+---
+import { email, mailtoWithSubject, subjects } from '../data/site';
+
+interface Props {
+  heading: 'h2' | 'h3';
+}
+
+const { heading: Heading } = Astro.props;
+---
+
+<article class="card card--soon">
+  <p class="card__kicker">Coming soon</p>
+  <Heading>Compliance consulting</Heading>
+  <p>
+    European and company compliance advisory as a future line. We do not offer this yet. No
+    credentials or pricing to list.
+  </p>
+  <a href={mailtoWithSubject(subjects.compliance)}>Email {email}</a>
+</article>

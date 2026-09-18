@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MailtoCta from '../../components/MailtoCta.astro';
+import { email, links, pageTitle, subjects } from '../../data/site';
+
+const description =
+  'Vendor-neutral, privacy-minded smart environments, typically Home Assistant-centred, with local control where it matters.';
+---
+
+<BaseLayout
+  title={pageTitle('Smart environments')}
+  description={description}
+  currentPath="/services/smart-environment"
+>
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <p class="eyebrow">Exploratory conversation. Not a fixed product package.</p>
+      <h1>Smart environments</h1>
+
+      <h2>Who this is for</h2>
+      <p>
+        Homeowners and small properties that want automation without surrendering everything to a
+        single consumer cloud.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Devices don’t talk; DIY setups get brittle; privacy and maintainability suffer when
+        architecture is an afterthought.
+      </p>
+
+      <h2>Positive proposition</h2>
+      <p>
+        We design, build, and operate vendor-neutral, privacy-minded smart environments, typically
+        Home Assistant-centred, with local control where it matters, documented cloud dependencies
+        where they remain, and architecture you can operate. These are installations we build and
+        operate. This site is not a client delivery portfolio.
+      </p>
+    </article>
+
+    <div class="card-grid card-grid--features">
+      <article class="card card--static card--span">
+        <h2>What we do</h2>
+        <ul class="list">
+          <li>
+            Local-first Home Assistant design and build on dedicated on-prem hardware
+            (containerised, Postgres-backed). Cloud only where a device requires it.
+          </li>
+          <li>
+            Vendor-neutral integration: Zigbee/ZHA, Somfy/Overkiz local API, Nest/Blink where kept,
+            mixed Tuya/Aqara/SONOFF/Hue ecosystems. Open coordinators, not a single vendor hub.
+          </li>
+          <li>
+            Custom integration engineering (ZHA quirks, ESPHome, upstream contributions).
+          </li>
+          <li>
+            Presence and occupancy (mmWave / ESPHome) driving lighting, climate, and privacy
+            automations.
+          </li>
+          <li>
+            Voice and everyday control (minimal, deliberate Alexa exposure; Home Assistant Voice;
+            household dashboards).
+          </li>
+          <li>Ongoing operations (runbooks, session logs, remote support).</li>
+          <li>AI-assisted home operations as emerging and exploratory only.</li>
+        </ul>
+      </article>
+
+      <article class="card card--static">
+        <h2>NucBox (hardened on-prem host)</h2>
+        <p>
+          The on-prem home server (NucBox-class mini-PC) we use for installations we build and
+          operate. We do not sell this hardware and we do not have an OEM partnership.
+        </p>
+        <ul class="list">
+          <li>Encrypted disk with TPM unlock</li>
+          <li>Tailscale-only administration</li>
+          <li>No inbound ports</li>
+          <li>Encrypted nightly backups mirrored off-site</li>
+          <li>Containerised Home Assistant and Postgres</li>
+        </ul>
+        <p class="card__meta">
+          <a href={links.starlinkStack}>Starlink monitoring stack</a>
+          {' · '}
+          <a href={links.zhaDeviceHandler}>ZHA device-handler PR</a>
+        </p>
+      </article>
+
+      <article class="card card--static">
+        <h2>Security</h2>
+        <ul class="list">
+          <li>Local-first control, with every kept cloud dependency documented.</li>
+          <li>
+            Privacy-respecting cameras: Frigate, presence-gated recording, and network controls so
+            footage stays local.
+          </li>
+          <li>
+            Home network resilience: DNS, reverse proxy and TLS on the LAN, mesh Wi-Fi, Tailscale
+            remote access, ISP/Starlink monitoring, off-site backups.
+          </li>
+          <li>
+            Hardened host bootstrap as on the NucBox card (encrypted disk, Tailscale-only admin, no
+            inbound ports, encrypted off-site backups).
+          </li>
+          <li>Not a certified alarm, medical, or life-safety installer.</li>
+        </ul>
+        <p class="card__meta">
+          <a href={links.internetPi}>internet-pi contribution</a>
+        </p>
+      </article>
+    </div>
+
+    <section class="section prose-measure">
+      <h2>Public engineering artefacts</h2>
+      <ul class="list">
+        <li>
+          <a href={links.haForumFieldNotes}>Home Assistant community forum field notes</a> (SONOFF
+          roller-shutter switch)
+        </li>
+        <li>
+          <a href={links.zhaDeviceHandler}>ZHA device-handler contribution</a>
+        </li>
+        <li>
+          <a href={links.starlinkStack}>Open-source Starlink monitoring stack</a>
+        </li>
+        <li>
+          <a href={links.internetPi}>internet-pi contribution</a>
+        </li>
+      </ul>
+      <p>Hands-on Home Assistant, Zigbee, and ESPHome work since 2024.</p>
+    </section>
+
+    <section class="section prose-measure">
+      <h2>What a first conversation covers</h2>
+      <ol class="numbered-tight">
+        <li>Goals and constraints (privacy, local-first preference, household users, existing kit).</li>
+        <li>
+          Boundary map: what must stay local. Life-safety and alarm limits we will not overclaim.
+        </li>
+        <li>A non-binding architecture sketch and staged scope if a project were to proceed.</li>
+        <li>
+          An honest fit check, including when DIY or another specialist is the better next step.
+        </li>
+      </ol>
+
+      <h2>Example outputs (only if we continue under a separate agreement)</h2>
+      <p>
+        Architecture notes; integration plan; configured system in agreed scope; automation
+        packages; owner runbook.
+      </p>
+      <p class="muted">Deeper project documentation will come later.</p>
+
+      <div class="callout">
+        <p class="callout__label">Boundaries</p>
+        <ul class="list">
+          <li>Vendor-neutral: we do not exist to push a single OEM.</li>
+          <li>Not a claim of certified alarm, medical, or life-safety installer status.</li>
+          <li>
+            We do not publish a portfolio of completed <em>client</em> Home Assistant deployments on
+            this site.
+          </li>
+          <li>We do not claim Matter, Thread, Z-Wave, or LoRaWAN support.</li>
+          <li>
+            Trip and Move demonstrate product engineering. They do not prove smart-environment
+            consulting delivery.
+          </li>
+          <li>No pricing or fixed outcomes from a first email.</li>
+        </ul>
+      </div>
+
+      <h2>Start a conversation</h2>
+      <p>
+        Email <strong>{email}</strong> with property type, what you already run, privacy priorities,
+        and the one problem you most want solved.
+      </p>
+      <p class="muted">Subject suggestion: <span class="mono">{subjects.smartEnvironment}</span></p>
+      <MailtoCta subject={subjects.smartEnvironment} label={`Email ${email}`} />
+    </section>
+  </div>
+</BaseLayout>

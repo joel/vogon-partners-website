@@ -1,0 +1,24 @@
+{
+  "name": "vogon-partners-website",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Public website for Vogon Partners OÜ.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3"
+  }
+}

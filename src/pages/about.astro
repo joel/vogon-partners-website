@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MailtoCta from '../components/MailtoCta.astro';
+import { companyName, email, ownerName, pageTitle } from '../data/site';
+
+const description = `${companyName} is an Estonian private limited company (owner/director ${ownerName}) that provides professional software and systems work and builds its own products (Trip, Move).`;
+---
+
+<BaseLayout title={pageTitle('About Vogon Partners')} description={description} currentPath="/about">
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <h1>About Vogon Partners</h1>
+      <p>
+        {companyName} is an Estonian private limited company (owner/director {ownerName}) that
+        provides professional software and systems work and builds its own products (Trip, Move).
+      </p>
+      <p>
+        Contact for this site: <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+      <p>
+        We keep this page short and factual. Client names, mission essays, and partnership claims
+        are not listed here.
+      </p>
+      <MailtoCta label={`Email ${email}`} />
+    </article>
+  </div>
+</BaseLayout>

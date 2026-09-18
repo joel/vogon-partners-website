@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MailtoCta from '../../components/MailtoCta.astro';
+import { email, links, pageTitle, subjects } from '../../data/site';
+
+const description =
+  'A collaborative trip journaling web application built with Rails, Phlex, and Hotwire. Built by Vogon Partners OÜ.';
+---
+
+<BaseLayout title={pageTitle('Trip')} description={description} currentPath="/showroom/trip">
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <p class="eyebrow">Showroom</p>
+      <h1>Trip</h1>
+
+      <h2>What it is</h2>
+      <p>
+        A collaborative trip journaling web application built with Rails, Phlex, and Hotwire. Built
+        by Vogon Partners OÜ.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Shared trip memory and coordination: plan and run a trip together, write journal entries
+        with media, comment and react, track checklists, invite members — with clear write and
+        comment rules by trip state — and optionally drive the journal through an MCP assistant.
+      </p>
+
+      <h2>Interesting engineering</h2>
+      <ul class="list">
+        <li>Action → event → subscriber → job architecture for write paths you can reason about.</li>
+        <li>
+          MCP endpoint (<span class="mono">POST /mcp</span>) with Bearer authentication and
+          <span class="mono">X-Agent-Identifier</span> agent attribution; tools call the same
+          application actions as the UI.
+        </li>
+        <li>Soft delete, versioning, and an activity path designed for recoverable collaboration.</li>
+        <li>Passwordless and passkeys-oriented authentication.</li>
+        <li>Phlex component UI and Kamal deployment configuration.</li>
+      </ul>
+
+      <h2>What this demonstrates about Vogon</h2>
+      <p>
+        How we structure product domain logic, authorisation, media, notifications, and
+        agent-facing surfaces — inspectable in public source.
+      </p>
+
+      <h2>Source and links</h2>
+      <ul class="list">
+        <li>GitHub: <a href={links.tripGithub}>{links.tripGithub}</a></li>
+        <li>Live demo: not linked yet.</li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout__label">What this does not prove</p>
+        <p>
+          Trip demonstrates product engineering. It does not prove smart-environment consulting
+          delivery, named client outcomes, or a live production URL.
+        </p>
+      </div>
+
+      <h2>Optional deep dives (Insights)</h2>
+      <p>
+        Actions/events/jobs; MCP shared-action contract; soft delete and restore.
+      </p>
+      <p class="muted">
+        Essay pages are not published yet. See the <a href="/insights">Insights</a> index.
+      </p>
+
+      <p class="muted">Subject suggestion: <span class="mono">{subjects.showroom}</span></p>
+      <MailtoCta subject={subjects.showroom} label={`Email ${email} about Trip`} />
+    </article>
+  </div>
+</BaseLayout>

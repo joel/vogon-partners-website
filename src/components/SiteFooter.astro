@@ -1,0 +1,24 @@
+---
+import { companyName, email, footerNav, links, mailto } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p><strong>{companyName}</strong> is an Estonian private limited company.</p>
+    <p>
+      Contact: <a href={mailto}>{email}</a>
+    </p>
+    <nav aria-label="Footer">
+      {
+        footerNav.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
+      }
+    </nav>
+    <p class="footer-repos">
+      <a href={links.tripGithub}>Trip on GitHub</a>
+      ·
+      <a href={links.moveGithub}>Move on GitHub</a>
+    </p>
+  </div>
+</footer>

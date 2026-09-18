@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MailtoCta from '../../components/MailtoCta.astro';
+import { email, links, pageTitle, subjects } from '../../data/site';
+
+const description =
+  'Vendor-neutral, privacy-minded smart environments — typically Home Assistant–centred — with local control where it matters.';
+---
+
+<BaseLayout
+  title={pageTitle('Smart environments')}
+  description={description}
+  currentPath="/services/smart-environment"
+>
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <p class="eyebrow">Exploratory conversation — not a fixed product package.</p>
+      <h1>Smart environments</h1>
+
+      <h2>Who this is for</h2>
+      <p>
+        Homeowners and small properties that want automation without surrendering everything to a
+        single consumer cloud.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Devices don’t talk; DIY setups get brittle; privacy and maintainability suffer when
+        architecture is an afterthought.
+      </p>
+
+      <h2>Positive proposition</h2>
+      <p>
+        We help design vendor-neutral, privacy-minded smart environments — typically Home
+        Assistant–centred — with local control where it matters, documented cloud dependencies where
+        they remain, and architecture you can operate.
+      </p>
+
+      <h2>What we bring (capability)</h2>
+      <ul class="list">
+        <li>
+          Zigbee (ZHA) integrations across manufacturers — bulbs, wall switches, sensors,
+          roller-shutter switches, water valves — on open coordinators, not a single vendor hub.
+        </li>
+        <li>
+          Local video analytics with Frigate, with camera privacy treated as a design requirement
+          (detection gated when people are home).
+        </li>
+        <li>A preference for local control, with every kept cloud dependency documented.</li>
+        <li>
+          Public engineering artefacts: field notes on the Home Assistant community forum, a
+          <a href={links.zhaDeviceHandler}>ZHA device-handler contribution</a>, and an
+          <a href={links.starlinkStack}>open-source Starlink monitoring stack</a>.
+        </li>
+        <li>
+          Hardened home-server bootstrap practice: encrypted disk with TPM auto-unlock,
+          Tailscale-only administration, no inbound ports, encrypted nightly backups mirrored
+          off-site.
+        </li>
+        <li>Hands-on Home Assistant, Zigbee, and ESPHome work since 2024.</li>
+      </ul>
+
+      <h2>What a first conversation covers</h2>
+      <ol class="numbered-tight">
+        <li>Goals and constraints (privacy, local-first preference, household users, existing kit).</li>
+        <li>
+          Boundary map — what must stay local; life-safety and alarm limits we will not overclaim.
+        </li>
+        <li>A non-binding architecture sketch and staged scope if a project were to proceed.</li>
+        <li>
+          An honest fit check — including when DIY or another specialist is the better next step.
+        </li>
+      </ol>
+
+      <h2>Example outputs (only if we continue under a separate agreement)</h2>
+      <p>
+        Architecture notes; integration plan; configured system in agreed scope; automation
+        packages; owner runbook.
+      </p>
+
+      <div class="callout">
+        <p class="callout__label">Boundaries</p>
+        <ul class="list">
+          <li>Vendor-neutral: we do not exist to push a single OEM.</li>
+          <li>Not a claim of certified alarm, medical, or life-safety installer status.</li>
+          <li>
+            We do not publish a portfolio of completed <em>client</em> Home Assistant deployments on
+            this site.
+          </li>
+          <li>We do not claim Matter, Thread, Z-Wave, or LoRaWAN support.</li>
+          <li>
+            Trip and Move demonstrate product engineering; they do not prove smart-environment
+            consulting delivery.
+          </li>
+          <li>No pricing or fixed outcomes from a first email.</li>
+        </ul>
+      </div>
+
+      <h2>Start a conversation</h2>
+      <p>
+        Email <strong>{email}</strong> with property type, what you already run, privacy priorities,
+        and the one problem you most want solved.
+      </p>
+      <p class="muted">Subject suggestion: <span class="mono">{subjects.smartEnvironment}</span></p>
+      <MailtoCta subject={subjects.smartEnvironment} label={`Email ${email}`} />
+    </article>
+  </div>
+</BaseLayout>

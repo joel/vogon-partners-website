@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { email, mailto, mailtoWithSubject, pageTitle, subjects } from '../data/site';
+
+const description =
+  'Email joel@vogonpartners.com. Include what you’re trying to do, constraints, and whether you’re asking about smart environments, operational improvement, or the products in the showroom.';
+---
+
+<BaseLayout title={pageTitle('Contact')} description={description} currentPath="/contact">
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <h1>Contact</h1>
+      <p>
+        Email: <strong><a href={mailto}>{email}</a></strong>
+      </p>
+      <p>
+        Please include: what you’re trying to do, constraints, and whether you’re asking about smart
+        environments, operational improvement, or the products in the showroom.
+      </p>
+      <p>We will not ask you to paste secrets into an unsolicited form.</p>
+
+      <h2>Suggested subjects</h2>
+      <ul class="list">
+        <li>
+          <a href={mailtoWithSubject(subjects.smartEnvironment)}>
+            <span class="mono">{subjects.smartEnvironment}</span>
+          </a>
+        </li>
+        <li>
+          <a href={mailtoWithSubject(subjects.aiOps)}>
+            <span class="mono">{subjects.aiOps}</span>
+          </a>
+        </li>
+        <li>
+          <a href={mailtoWithSubject(subjects.showroom)}>
+            <span class="mono">{subjects.showroom}</span>
+          </a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</BaseLayout>

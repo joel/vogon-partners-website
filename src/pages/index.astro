@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MailtoCta from '../components/MailtoCta.astro';
+import { companyName, email, links, ownerName, pageTitle } from '../data/site';
+
+const description =
+  'We do professional software and systems work — and we build products like Trip and Move so our engineering is visible, not just claimed.';
+---
+
+<BaseLayout title={pageTitle('Software and systems work you can inspect.')} description={description} currentPath="/">
+  <div class="page-wrap">
+    <p class="eyebrow">{companyName}</p>
+    <h1>Software and systems work you can inspect.</h1>
+    <p class="lede">
+      We do professional software and systems work — and we build products like Trip and Move so
+      our engineering is visible, not just claimed.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt>Who we are</dt>
+        <dd>
+          An Estonian private limited company. Owner and director: {ownerName}.
+          <a href="/about">About</a>
+        </dd>
+      </div>
+      <div>
+        <dt>What we do</dt>
+        <dd>
+          Professional software and systems work. Exploratory conversations on smart environments
+          and AI-assisted operational improvement. Products we design and ship ourselves.
+        </dd>
+      </div>
+      <div>
+        <dt>What makes us distinctive</dt>
+        <dd>
+          You can inspect how we build. Trip and Move are real applications with public source —
+          MCP assistant surfaces, careful auth and tenancy, hybrid search, production-minded Rails
+          engineering.
+        </dd>
+      </div>
+    </dl>
+
+    <section class="section" aria-labelledby="products-heading">
+      <h2 class="section__title" id="products-heading">Products (engineering evidence)</h2>
+      <div class="card-grid">
+        <a class="card" href="/showroom/trip">
+          <h3>Trip</h3>
+          <p>
+            A collaborative trip journal (Rails) with shared memberships, media, checklists, and an
+            MCP assistant surface.
+          </p>
+          <span class="card__meta">github.com/joel/trip</span>
+        </a>
+        <a class="card" href="/showroom/move">
+          <h3>Move</h3>
+          <p>
+            A collaborative moving-inventory app: pack, recognise, search, unpack — with hybrid
+            search and careful multi-tenant design.
+          </p>
+          <span class="card__meta">move-easy.org · github.com/joel/move</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="offers-heading">
+      <h2 class="section__title" id="offers-heading">Offers (exploratory)</h2>
+      <div class="card-grid">
+        <a class="card" href="/services/smart-environment">
+          <h3>Smart environments</h3>
+          <p>
+            Vendor-neutral, privacy-minded home automation, typically Home Assistant–centred.
+          </p>
+        </a>
+        <a class="card" href="/services/ai-operations">
+          <h3>AI-assisted operational improvement</h3>
+          <p>
+            Examine one operational bottleneck; improve it with software or automation only where it
+            helps.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Start a conversation</h2>
+      <p>
+        Email <a href={`mailto:${email}`}>{email}</a>.
+      </p>
+      <MailtoCta label={`Start a conversation: ${email}`} />
+      <p class="muted">
+        Product source:
+        <a href={links.tripGithub}>Trip</a>
+        ·
+        <a href={links.moveGithub}>Move</a>
+        ·
+        <a href={links.moveLive}>move-easy.org</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

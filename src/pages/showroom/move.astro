@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MailtoCta from '../../components/MailtoCta.astro';
+import { email, links, pageTitle, subjects } from '../../data/site';
+
+const description =
+  'A collaborative moving-inventory manager: pack, recognise, search, unpack. Built by Vogon Partners OÜ.';
+---
+
+<BaseLayout title={pageTitle('Move')} description={description} currentPath="/showroom/move">
+  <div class="page-wrap">
+    <article class="prose-measure">
+      <p class="eyebrow">Showroom</p>
+      <h1>Move</h1>
+
+      <h2>What it is</h2>
+      <p>
+        A collaborative moving-inventory manager: pack, recognise, search, unpack. Built by Vogon
+        Partners OÜ. Live at <a href={links.moveLive}>move-easy.org</a>.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Moving loses context: what’s in which box, fragile items, insurance inventories, “where is
+        X?”, household collaboration, and unpacking fatigue.
+      </p>
+
+      <h2>Interesting engineering</h2>
+      <ul class="list">
+        <li>Box lifecycle with QR labels, unpacking mode, and printable manifests.</li>
+        <li>Bring-your-own-key vision recognition for box contents.</li>
+        <li>Hybrid search: PostgreSQL full-text + trigram + pgvector embeddings.</li>
+        <li>Roles and server-side authorisation; schema-per-organisation multi-tenancy.</li>
+        <li>MCP tools bound to a move, reusing the same shared actions as the web UI.</li>
+        <li>Insurance declaration and dossier PDF flows.</li>
+      </ul>
+
+      <h2>What this demonstrates about Vogon</h2>
+      <p>
+        Multi-tenant Rails product design, AI-assisted capture with honest ranking limits, agent
+        surfaces that cannot bypass the app contract, and production operations thinking.
+      </p>
+
+      <h2>Source and links</h2>
+      <ul class="list">
+        <li>Product: <a href={links.moveLive}>{links.moveLive}</a></li>
+        <li>GitHub: <a href={links.moveGithub}>{links.moveGithub}</a></li>
+      </ul>
+
+      <div class="callout">
+        <p class="callout__label">What this does not prove</p>
+        <p>
+          Move shows how we build agent-facing and AI-assisted software. It does not prove
+          consulting delivery history or client outcomes.
+        </p>
+      </div>
+
+      <h2>Optional deep dives (Insights)</h2>
+      <p>Hybrid search; MCP shared-action contract; BYOK vision recognition.</p>
+      <p class="muted">
+        Essay pages are not published yet. See the <a href="/insights">Insights</a> index.
+      </p>
+
+      <p class="muted">Subject suggestion: <span class="mono">{subjects.showroom}</span></p>
+      <MailtoCta subject={subjects.showroom} label={`Email ${email} about Move`} />
+    </article>
+  </div>
+</BaseLayout>

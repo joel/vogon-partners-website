@@ -257,10 +257,14 @@ p {
   margin-top: 1.75rem;
 }
 
-@media (min-width: 52rem) {
+@media (min-width: 44rem) {
   .card-grid--features {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: start;
+  }
+
+  .card-grid--features .card--span {
+    grid-column: 1 / -1;
   }
 }
 

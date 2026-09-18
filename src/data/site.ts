@@ -9,9 +9,10 @@ export const email = 'joel@vogonpartners.com';
 export const mailto = `mailto:${email}`;
 
 export const subjects = {
-  smartEnvironment: 'Smart environment — discovery',
-  aiOps: 'AI-ops — discovery',
-  showroom: 'Showroom — Trip/Move',
+  smartEnvironment: 'Smart environment: discovery',
+  aiOps: 'AI-ops: discovery',
+  showroom: 'Showroom: Trip/Move',
+  compliance: 'Compliance: coming soon',
 } as const;
 
 export function mailtoWithSubject(subject: string): string {
@@ -25,6 +26,9 @@ export const links = {
   moveLive: 'https://move-easy.org',
   zhaDeviceHandler: 'https://github.com/zigpy/zha-device-handlers/pull/5258',
   starlinkStack: 'https://github.com/joel/starlink-monitoring-stack',
+  haForumFieldNotes:
+    'https://community.home-assistant.io/t/sonoff-mini-zbrbs-e-zigbee-roller-shutter-wall-switch-field-notes-rocker-quirks-calibration-and-traps/1022123',
+  internetPi: 'https://github.com/geerlingguy/internet-pi/pull/665',
 } as const;
 
 export const primaryNav = [
@@ -47,5 +51,5 @@ export const footerNav = [
 export const siteTitle = companyName;
 
 export function pageTitle(page: string): string {
-  return `${page} — ${companyName}`;
+  return `${page} · ${companyName}`;
 }

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ComingSoonCard from '../../components/ComingSoonCard.astro';
 import { pageTitle } from '../../data/site';
 
 const description =
-  'Two exploratory service directions. Engineering proof lives in the Showroom (Trip and Move); it is not a consulting case library.';
+  'Two exploratory service directions, plus a compliance line that is coming soon. Engineering proof lives in the Showroom (Trip and Move); it is not a consulting case library.';
 ---
 
 <BaseLayout title={pageTitle('Services')} description={description} currentPath="/services">
@@ -13,16 +14,16 @@ const description =
       <p>
         We publish two exploratory service directions. Each page explains what a first conversation
         covers. Engineering proof lives in the Showroom (Trip and Move); it is not a consulting case
-        library.
+        library. A compliance consulting line is coming soon.
       </p>
     </article>
 
-    <div class="card-grid">
+    <div class="card-grid card-grid--3">
       <a class="card" href="/services/smart-environment">
         <h2>Smart environments</h2>
         <p>
-          Private, vendor-neutral home automation, typically Home Assistant–centred, with local
-          control and clear architecture as design preferences.
+          Private, vendor-neutral home automation, typically Home Assistant-centred, with local
+          control and clear architecture as design preferences. Installations we build and operate.
         </p>
       </a>
       <a class="card" href="/services/ai-operations">
@@ -32,12 +33,13 @@ const description =
           software, automation, or AI-assisted workflows are the right lever.
         </p>
       </a>
+      <ComingSoonCard heading="h2" />
     </div>
 
     <section class="section prose-measure">
       <h2>Engineering proof (not a service catalogue)</h2>
       <p>
-        Trip and Move — MCP surfaces, vision recognition, hybrid search, and production-minded Rails
+        Trip and Move: MCP surfaces, vision recognition, hybrid search, and production-minded Rails
         engineering.
       </p>
       <p>

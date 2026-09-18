@@ -1,10 +1,10 @@
-# Vogon Partners OÜ — public website
+# Vogon Partners OÜ public website
 
 Static Astro site for **Vogon Partners OÜ**.
 
 **This scaffold is not a publish.** Staging implementation only. No public DNS, ads, analytics, or go-live. External launch needs a separate written Owner approval.
 
-Canonical page meaning comes from Brand **`public-copy-v1`** (Publication Candidate, 2026-09-13). Implementers must not invent claims, client names, pricing, ROI, or live Trip URLs.
+Canonical page meaning comes from Brand **`public-copy-v1`**, plus Owner HA/security/compliance copy (2026-09-18). Implementers must not invent claims, client names, pricing, ROI, or live Trip URLs.
 
 ## Run locally
 
@@ -44,12 +44,12 @@ No Wrangler production routes or custom-domain config are included on purpose.
 | --- | --- |
 | `/` | Homepage (positioning Candidate A) |
 | `/about` | Company facts |
-| `/services` | Two exploratory offers |
-| `/services/smart-environment` | Smart environments |
+| `/services` | Two exploratory offers plus compliance coming soon |
+| `/services/smart-environment` | Smart environments (What we do, NucBox, Security) |
 | `/services/ai-operations` | AI-assisted operational improvement |
 | `/showroom` | Index of Trip and Move |
-| `/showroom/trip` | Trip — GitHub only |
-| `/showroom/move` | Move — GitHub + move-easy.org |
+| `/showroom/trip` | Trip, GitHub only |
+| `/showroom/move` | Move, GitHub + move-easy.org |
 | `/insights` | Intro + empty state |
 | `/contact` | mailto CTAs |
 
@@ -63,19 +63,18 @@ Primary nav: Home · Services · Showroom · Insights · Contact.
 - Analytics, cookie banners, ads
 - Production custom domain / public DNS
 - Screenshots and architecture diagrams (text-first staging)
+- Site B / second-household identity, occupant names, device counts
+- Deeper smart-environment project documentation
+- Compliance consulting as a live offer (teaser only)
 
 ## Brand gaps noted, not filled
 
-These are missing from Brand public copy or still Owner-gated. The site does **not** invent replacements:
-
-- **Home Assistant forum field notes** are named in public copy, but no canonical URL was supplied in the handoff. The sentence is on `/services/smart-environment`; only the ZHA PR and Starlink stack are linked.
-- **`geerlingguy/internet-pi` PR 665** is on the allowed-link list but is not in public-copy page bodies, so it is not surfaced.
 - **Showroom index** has no dedicated public-copy block; the page assembles existing Home/Services sentences and links Trip + Move.
-- **Trip/Move “what this does not prove”** callouts restate boundaries already in public copy (product engineering ≠ consulting delivery / client outcomes).
+- **Trip/Move “what this does not prove”** callouts restate boundaries already in public copy (product engineering is not consulting delivery or client outcomes).
 - No Owner-supplied logo; wordmark is plain text, not a lockup.
 
 ## Stack
 
 Astro (static, TypeScript) + plain CSS design tokens (“Inspectable calm”: warm off-white, near-black ink, one muted steel accent). No UI kit, almost no motion, no analytics.
 
-Primary CTA: `mailto:joel@vogonpartners.com` with the soft subjects from the Brand handoff.
+Primary CTA: `mailto:joel@vogonpartners.com` with soft subjects (`Smart environment: discovery`, `AI-ops: discovery`, `Showroom: Trip/Move`, `Compliance: coming soon`).

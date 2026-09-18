@@ -4,7 +4,7 @@ import MailtoCta from '../../components/MailtoCta.astro';
 import { email, links, pageTitle, subjects } from '../../data/site';
 
 const description =
-  'Vendor-neutral, privacy-minded smart environments — typically Home Assistant–centred — with local control where it matters.';
+  'Vendor-neutral, privacy-minded smart environments, typically Home Assistant-centred, with local control where it matters.';
 ---
 
 <BaseLayout
@@ -14,7 +14,7 @@ const description =
 >
   <div class="page-wrap">
     <article class="prose-measure">
-      <p class="eyebrow">Exploratory conversation — not a fixed product package.</p>
+      <p class="eyebrow">Exploratory conversation. Not a fixed product package.</p>
       <h1>Smart environments</h1>
 
       <h2>Who this is for</h2>
@@ -31,46 +31,115 @@ const description =
 
       <h2>Positive proposition</h2>
       <p>
-        We help design vendor-neutral, privacy-minded smart environments — typically Home
-        Assistant–centred — with local control where it matters, documented cloud dependencies where
-        they remain, and architecture you can operate.
+        We design, build, and operate vendor-neutral, privacy-minded smart environments, typically
+        Home Assistant-centred, with local control where it matters, documented cloud dependencies
+        where they remain, and architecture you can operate. These are installations we build and
+        operate. This site is not a client delivery portfolio.
       </p>
+    </article>
 
-      <h2>What we bring (capability)</h2>
+    <div class="card-grid card-grid--features">
+      <article class="card card--static">
+        <h2>What we do</h2>
+        <ul class="list">
+          <li>
+            Local-first Home Assistant design and build on dedicated on-prem hardware
+            (containerised, Postgres-backed). Cloud only where a device requires it.
+          </li>
+          <li>
+            Vendor-neutral integration: Zigbee/ZHA, Somfy/Overkiz local API, Nest/Blink where kept,
+            mixed Tuya/Aqara/SONOFF/Hue ecosystems. Open coordinators, not a single vendor hub.
+          </li>
+          <li>
+            Custom integration engineering (ZHA quirks, ESPHome, upstream contributions).
+          </li>
+          <li>
+            Presence and occupancy (mmWave / ESPHome) driving lighting, climate, and privacy
+            automations.
+          </li>
+          <li>
+            Voice and everyday control (minimal, deliberate Alexa exposure; Home Assistant Voice;
+            household dashboards).
+          </li>
+          <li>Ongoing operations (runbooks, session logs, remote support).</li>
+          <li>AI-assisted home operations as emerging and exploratory only.</li>
+        </ul>
+      </article>
+
+      <article class="card card--static">
+        <h2>NucBox (hardened on-prem host)</h2>
+        <p>
+          The on-prem home server (NucBox-class mini-PC) we use for installations we build and
+          operate. We do not sell this hardware and we do not have an OEM partnership.
+        </p>
+        <ul class="list">
+          <li>Encrypted disk with TPM unlock</li>
+          <li>Tailscale-only administration</li>
+          <li>No inbound ports</li>
+          <li>Encrypted nightly backups mirrored off-site</li>
+          <li>Containerised Home Assistant and Postgres</li>
+        </ul>
+        <p class="card__meta">
+          <a href={links.starlinkStack}>Starlink monitoring stack</a>
+          {' · '}
+          <a href={links.zhaDeviceHandler}>ZHA device-handler PR</a>
+        </p>
+      </article>
+
+      <article class="card card--static">
+        <h2>Security</h2>
+        <ul class="list">
+          <li>Local-first control, with every kept cloud dependency documented.</li>
+          <li>
+            Privacy-respecting cameras: Frigate, presence-gated recording, and network controls so
+            footage stays local.
+          </li>
+          <li>
+            Home network resilience: DNS, reverse proxy and TLS on the LAN, mesh Wi-Fi, Tailscale
+            remote access, ISP/Starlink monitoring, off-site backups.
+          </li>
+          <li>
+            Hardened host bootstrap as on the NucBox card (encrypted disk, Tailscale-only admin, no
+            inbound ports, encrypted off-site backups).
+          </li>
+          <li>Not a certified alarm, medical, or life-safety installer.</li>
+        </ul>
+        <p class="card__meta">
+          <a href={links.internetPi}>internet-pi contribution</a>
+        </p>
+      </article>
+    </div>
+
+    <section class="section prose-measure">
+      <h2>Public engineering artefacts</h2>
       <ul class="list">
         <li>
-          Zigbee (ZHA) integrations across manufacturers — bulbs, wall switches, sensors,
-          roller-shutter switches, water valves — on open coordinators, not a single vendor hub.
+          <a href={links.haForumFieldNotes}>Home Assistant community forum field notes</a> (SONOFF
+          roller-shutter switch)
         </li>
         <li>
-          Local video analytics with Frigate, with camera privacy treated as a design requirement
-          (detection gated when people are home).
-        </li>
-        <li>A preference for local control, with every kept cloud dependency documented.</li>
-        <li>
-          Public engineering artefacts: field notes on the Home Assistant community forum, a
-          {' '}
-          <a href={links.zhaDeviceHandler}>ZHA device-handler contribution</a>, and an
-          {' '}
-          <a href={links.starlinkStack}>open-source Starlink monitoring stack</a>.
+          <a href={links.zhaDeviceHandler}>ZHA device-handler contribution</a>
         </li>
         <li>
-          Hardened home-server bootstrap practice: encrypted disk with TPM auto-unlock,
-          Tailscale-only administration, no inbound ports, encrypted nightly backups mirrored
-          off-site.
+          <a href={links.starlinkStack}>Open-source Starlink monitoring stack</a>
         </li>
-        <li>Hands-on Home Assistant, Zigbee, and ESPHome work since 2024.</li>
+        <li>
+          <a href={links.internetPi}>internet-pi contribution</a>
+        </li>
       </ul>
+      <p>Hands-on Home Assistant, Zigbee, and ESPHome work since 2024.</p>
+    </section>
 
+    <section class="section prose-measure">
       <h2>What a first conversation covers</h2>
       <ol class="numbered-tight">
         <li>Goals and constraints (privacy, local-first preference, household users, existing kit).</li>
         <li>
-          Boundary map — what must stay local; life-safety and alarm limits we will not overclaim.
+          Boundary map: what must stay local. Life-safety and alarm limits we will not overclaim.
         </li>
         <li>A non-binding architecture sketch and staged scope if a project were to proceed.</li>
         <li>
-          An honest fit check — including when DIY or another specialist is the better next step.
+          An honest fit check, including when DIY or another specialist is the better next step.
         </li>
       </ol>
 
@@ -79,6 +148,7 @@ const description =
         Architecture notes; integration plan; configured system in agreed scope; automation
         packages; owner runbook.
       </p>
+      <p class="muted">Deeper project documentation will come later.</p>
 
       <div class="callout">
         <p class="callout__label">Boundaries</p>
@@ -91,7 +161,7 @@ const description =
           </li>
           <li>We do not claim Matter, Thread, Z-Wave, or LoRaWAN support.</li>
           <li>
-            Trip and Move demonstrate product engineering; they do not prove smart-environment
+            Trip and Move demonstrate product engineering. They do not prove smart-environment
             consulting delivery.
           </li>
           <li>No pricing or fixed outcomes from a first email.</li>
@@ -105,6 +175,6 @@ const description =
       </p>
       <p class="muted">Subject suggestion: <span class="mono">{subjects.smartEnvironment}</span></p>
       <MailtoCta subject={subjects.smartEnvironment} label={`Email ${email}`} />
-    </article>
+    </section>
   </div>
 </BaseLayout>

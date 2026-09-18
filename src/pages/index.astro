@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MailtoCta from '../components/MailtoCta.astro';
+import ComingSoonCard from '../components/ComingSoonCard.astro';
 import { companyName, email, links, ownerName, pageTitle } from '../data/site';
 
 const description =
-  'We do professional software and systems work — and we build products like Trip and Move so our engineering is visible, not just claimed.';
+  'We do professional software and systems work, and we build products like Trip and Move so our engineering is visible, not just claimed.';
 ---
 
 <BaseLayout title={pageTitle('Software and systems work you can inspect.')} description={description} currentPath="/">
@@ -12,7 +13,7 @@ const description =
     <p class="eyebrow">{companyName}</p>
     <h1>Software and systems work you can inspect.</h1>
     <p class="lede">
-      We do professional software and systems work — and we build products like Trip and Move so
+      We do professional software and systems work, and we build products like Trip and Move so
       our engineering is visible, not just claimed.
     </p>
 
@@ -29,14 +30,15 @@ const description =
         <dt>What we do</dt>
         <dd>
           Professional software and systems work. Exploratory conversations on smart environments
-          and AI-assisted operational improvement. Products we design and ship ourselves.
+          and AI-assisted operational improvement. Compliance consulting is coming soon. Products we
+          design and ship ourselves.
         </dd>
       </div>
       <div>
         <dt>What makes us distinctive</dt>
         <dd>
-          You can inspect how we build. Trip and Move are real applications with public source —
-          MCP assistant surfaces, careful auth and tenancy, hybrid search, production-minded Rails
+          You can inspect how we build. Trip and Move are real applications with public source: MCP
+          assistant surfaces, careful auth and tenancy, hybrid search, production-minded Rails
           engineering.
         </dd>
       </div>
@@ -56,7 +58,7 @@ const description =
         <a class="card" href="/showroom/move">
           <h3>Move</h3>
           <p>
-            A collaborative moving-inventory app: pack, recognise, search, unpack — with hybrid
+            A collaborative moving-inventory app: pack, recognise, search, unpack, with hybrid
             search and careful multi-tenant design.
           </p>
           <span class="card__meta">move-easy.org · github.com/joel/move</span>
@@ -66,11 +68,12 @@ const description =
 
     <section class="section" aria-labelledby="offers-heading">
       <h2 class="section__title" id="offers-heading">Offers (exploratory)</h2>
-      <div class="card-grid">
+      <div class="card-grid card-grid--3">
         <a class="card" href="/services/smart-environment">
           <h3>Smart environments</h3>
           <p>
-            Vendor-neutral, privacy-minded home automation, typically Home Assistant–centred.
+            Vendor-neutral, privacy-minded home automation, typically Home Assistant-centred.
+            Installations we build and operate.
           </p>
         </a>
         <a class="card" href="/services/ai-operations">
@@ -80,6 +83,7 @@ const description =
             helps.
           </p>
         </a>
+        <ComingSoonCard heading="h3" />
       </div>
     </section>
 

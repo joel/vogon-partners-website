@@ -1,6 +1,6 @@
 /**
  * Site constants and Brand-faithful copy fragments.
- * Page bodies follow website/public-copy-v1.md. Do not invent claims here.
+ * Page bodies follow website/public-copy-v1.1.md. Do not invent claims here.
  */
 
 export const companyName = 'Vogon Partners OÜ';
@@ -11,7 +11,7 @@ export const mailto = `mailto:${email}`;
 export const subjects = {
   smartEnvironment: 'Smart environment: discovery',
   aiOps: 'AI-ops: discovery',
-  showroom: 'Showroom: Trip/Move',
+  showroom: 'Showroom',
   compliance: 'Compliance: coming soon',
 } as const;
 

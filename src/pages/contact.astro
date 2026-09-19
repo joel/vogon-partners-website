@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { email, mailto, mailtoWithSubject, pageTitle, subjects } from '../data/site';
 
 const description =
-  'Email joel@vogonpartners.com. Include what you’re trying to do, constraints, and whether you’re asking about smart environments, operational improvement, or the products in the showroom.';
+  'Email joel@vogonpartners.com. Say what you are trying to do, your constraints, and whether this is about smart environments, operational improvement, or Trip/Move.';
 ---
 
 <BaseLayout title={pageTitle('Contact')} description={description} currentPath="/contact">
@@ -11,13 +11,12 @@ const description =
     <article class="prose-measure">
       <h1>Contact</h1>
       <p>
-        Email: <strong><a href={mailto}>{email}</a></strong>
+        <strong><a href={mailto}>{email}</a></strong>
       </p>
       <p>
-        Please include: what you’re trying to do, constraints, and whether you’re asking about smart
-        environments, operational improvement, or the products in the showroom.
+        Say what you are trying to do, your constraints, and whether this is about smart
+        environments, operational improvement, or Trip/Move.
       </p>
-      <p>We will not ask you to paste secrets into an unsolicited form.</p>
 
       <h2>Suggested subjects</h2>
       <ul class="list">
@@ -34,11 +33,6 @@ const description =
         <li>
           <a href={mailtoWithSubject(subjects.showroom)}>
             <span class="mono">{subjects.showroom}</span>
-          </a>
-        </li>
-        <li>
-          <a href={mailtoWithSubject(subjects.compliance)}>
-            <span class="mono">{subjects.compliance}</span>
           </a>
         </li>
       </ul>

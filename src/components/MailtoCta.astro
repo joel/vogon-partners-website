@@ -6,7 +6,7 @@ interface Props {
   label?: string;
 }
 
-const { subject, label = `Start a conversation: ${email}` } = Astro.props;
+const { subject, label = `Email ${email}` } = Astro.props;
 const href = subject ? mailtoWithSubject(subject) : mailto;
 ---
 

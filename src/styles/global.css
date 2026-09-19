@@ -327,6 +327,10 @@ a.card p {
   margin-top: 0.4rem;
 }
 
+.card--static ul + p {
+  margin-top: 0.85rem;
+}
+
 .card--soon {
   border-style: dashed;
 }

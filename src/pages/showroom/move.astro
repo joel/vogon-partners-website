@@ -4,7 +4,7 @@ import MailtoCta from '../../components/MailtoCta.astro';
 import { email, links, pageTitle, subjects } from '../../data/site';
 
 const description =
-  'A collaborative moving-inventory manager: pack, recognise, search, unpack. Built by Vogon Partners OÜ.';
+  'A collaborative moving-inventory app. Live at move-easy.org. Built by Vogon Partners.';
 ---
 
 <BaseLayout title={pageTitle('Move')} description={description} currentPath="/showroom/move">
@@ -15,53 +15,39 @@ const description =
 
       <h2>What it is</h2>
       <p>
-        A collaborative moving-inventory manager: pack, recognise, search, unpack. Built by Vogon
-        Partners OÜ. Live at <a href={links.moveLive}>move-easy.org</a>.
+        A collaborative moving-inventory app. Live at <a href={links.moveLive}>move-easy.org</a>.
+        Built by Vogon Partners.
       </p>
 
       <h2>Problem</h2>
       <p>
-        Moving loses context: what’s in which box, fragile items, insurance inventories, “where is
-        X?”, household collaboration, and unpacking fatigue.
+        Moving loses context: which box, what is fragile, insurance lists, “where is X?”, and
+        unpacking fatigue.
       </p>
 
-      <h2>Interesting engineering</h2>
+      <h2>Engineering worth noticing</h2>
       <ul class="list">
-        <li>Box lifecycle with QR labels, unpacking mode, and printable manifests.</li>
-        <li>Bring-your-own-key vision recognition for box contents.</li>
-        <li>Hybrid search: PostgreSQL full-text + trigram + pgvector embeddings.</li>
-        <li>Roles and server-side authorisation; schema-per-organisation multi-tenancy.</li>
-        <li>MCP tools bound to a move, reusing the same shared actions as the web UI.</li>
-        <li>Insurance declaration and dossier PDF flows.</li>
+        <li>Box lifecycle with QR labels.</li>
+        <li>BYOK vision for contents.</li>
+        <li>Hybrid search.</li>
+        <li>Schema-per-organisation tenancy.</li>
+        <li>MCP tools bound to a move.</li>
+        <li>Insurance PDF flows.</li>
       </ul>
 
-      <h2>What this demonstrates about Vogon</h2>
+      <h2>Why it is on this site</h2>
       <p>
-        Multi-tenant Rails product design, AI-assisted capture with honest ranking limits, agent
-        surfaces that cannot bypass the app contract, and production operations thinking.
+        Shows multi-tenant Rails product design and AI-assisted capture with an honest application
+        boundary.
       </p>
 
-      <h2>Source and links</h2>
+      <h2>Links</h2>
       <ul class="list">
-        <li>Product: <a href={links.moveLive}>{links.moveLive}</a></li>
-        <li>GitHub: <a href={links.moveGithub}>{links.moveGithub}</a></li>
+        <li>Product: <a href={links.moveLive}>move-easy.org</a></li>
+        <li>GitHub: <a href={links.moveGithub}>{links.moveGithub.replace('https://', '')}</a></li>
       </ul>
 
-      <div class="callout">
-        <p class="callout__label">What this does not prove</p>
-        <p>
-          Move shows how we build agent-facing and AI-assisted software. It does not prove
-          consulting delivery history or client outcomes.
-        </p>
-      </div>
-
-      <h2>Optional deep dives (Insights)</h2>
-      <p>Hybrid search; MCP shared-action contract; BYOK vision recognition.</p>
-      <p class="muted">
-        Essay pages are not published yet. See the <a href="/insights">Insights</a> index.
-      </p>
-
-      <p class="muted">Subject suggestion: <span class="mono">{subjects.showroom}</span></p>
+      <p class="muted">Subject: <span class="mono">{subjects.showroom}</span></p>
       <MailtoCta subject={subjects.showroom} label={`Email ${email} about Move`} />
     </article>
   </div>

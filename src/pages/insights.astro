@@ -2,24 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pageTitle } from '../data/site';
 
-const description =
-  'Notes from real engineering work: Rails, MCP, AI features in products we ship, and operational lessons worth writing down.';
+const description = 'Notes from real engineering work on products we ship. Fewer pieces, with sources.';
 ---
 
 <BaseLayout title={pageTitle('Insights')} description={description} currentPath="/insights">
   <div class="page-wrap">
     <article class="prose-measure">
       <h1>Insights</h1>
-      <p>
-        Notes from real engineering work: Rails, MCP, AI features in products we ship, and
-        operational lessons worth writing down. We publish fewer pieces with sources, not keyword
-        filler.
-      </p>
+      <p>Notes from real engineering work on products we ship. Fewer pieces, with sources.</p>
 
       <div class="empty-state">
         <p>
-          First essays will come from Trip and Move: actions and events, MCP design, and hybrid
-          search.
+          Until the first essay lands: expect writing on actions and events, MCP design, and hybrid
+          search from Trip and Move.
         </p>
       </div>
     </article>

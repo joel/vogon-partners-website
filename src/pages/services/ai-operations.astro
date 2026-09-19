@@ -3,8 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import MailtoCta from '../../components/MailtoCta.astro';
 import { email, pageTitle, subjects } from '../../data/site';
 
-const description =
-  'Find repetitive coordination and information bottlenecks; decide honestly whether software, automation, or AI-assisted workflows are the right lever.';
+const description = 'Find the friction. Fix the work. Use AI only where it adds leverage.';
 ---
 
 <BaseLayout
@@ -14,78 +13,55 @@ const description =
 >
   <div class="page-wrap">
     <article class="prose-measure">
-      <p class="eyebrow">Exploratory conversation. Friction first, models second.</p>
       <h1>AI-assisted operational improvement</h1>
+      <p class="lede">Find the friction. Fix the work. Use AI only where it adds leverage.</p>
 
-      <h2>Who this is for</h2>
+      <h2>For</h2>
       <p>
         Operators and small organisations stuck in repetitive coordination, manual handoffs, or tool
         sprawl.
       </p>
 
-      <h2>Problem</h2>
+      <h2>Point of view</h2>
       <p>
-        “Add AI” without redesigning the work usually creates another dashboard. The target is
-        friction, not model fashion.
+        Bolting a model onto a broken process usually creates another dashboard. We start with one
+        named bottleneck.
       </p>
 
-      <h2>What a discovery conversation covers</h2>
+      <h2>How a first conversation goes</h2>
       <ol class="numbered-tight">
-        <li>One named bottleneck you are willing to examine.</li>
-        <li>A lightweight friction map (process vs software vs information stall).</li>
-        <li>A leverage check: when automation or an agent surface helps, and when it does not.</li>
+        <li>Name the bottleneck.</li>
+        <li>Separate process problems from software problems from information stalls.</li>
+        <li>Decide where automation or an agent surface helps – and where it does not.</li>
         <li>
-          Engineering patterns we can show from products we ship (below), as building blocks, not
-          your ROI.
+          Look at patterns from products we ship (below) as engineering examples, not as your ROI.
         </li>
-        <li>Data and secrets boundaries before any deeper access.</li>
+        <li>Agree data and secrets boundaries before any deeper access.</li>
       </ol>
 
-      <h2>Engineering building blocks (from Trip and Move)</h2>
+      <h2>Engineering we can show</h2>
+      <p>From Trip and Move:</p>
       <ul class="list">
         <li>
-          <strong>MCP tools</strong> that call the same application actions as the UI. Agents cannot
-          bypass tenancy or authorisation.
+          MCP tools that call the same application actions as the UI, so agents do not get a weaker
+          back door
         </li>
         <li>
-          <strong>Vision-assisted recognition</strong> for inventory contents with bring-your-own-key
-          providers (Move).
+          Vision-assisted recognition with bring-your-own-key providers (Move)
         </li>
         <li>
-          <strong>Hybrid search</strong>: full-text + trigram + vector embeddings (Move).
+          Hybrid search: full-text, trigram, and vector embeddings (Move)
         </li>
       </ul>
-      <p>
-        These show how we build agent-facing and AI-assisted software. They do not prove consulting
-        delivery history or client outcomes.
-      </p>
       <p>
         See <a href="/showroom">Trip and Move in the Showroom</a>.
       </p>
 
-      <h2>Example outputs (only if we continue under a separate agreement)</h2>
       <p>
-        Friction map; prioritised interventions; an implemented workflow or application slice;
-        operating notes.
+        Email <strong>{email}</strong>
       </p>
-
-      <div class="callout">
-        <p class="callout__label">Boundaries</p>
-        <ul class="list">
-          <li>No invented ROI percentages or named client outcomes.</li>
-          <li>A product demo is not your operational result.</li>
-          <li>We do not replace regulated professional advice.</li>
-          <li>We will not ask you to paste secrets into an unsolicited form.</li>
-        </ul>
-      </div>
-
-      <h2>Start a conversation</h2>
-      <p>
-        Email <strong>{email}</strong> with one repetitive bottleneck and your data-access
-        constraints.
-      </p>
-      <p class="muted">Subject suggestion: <span class="mono">{subjects.aiOps}</span></p>
-      <p>We will say honestly if software or AI is the wrong lever.</p>
+      <p class="muted">Subject: <span class="mono">{subjects.aiOps}</span></p>
+      <p>Include one repetitive bottleneck and your data-access constraints.</p>
       <MailtoCta subject={subjects.aiOps} label={`Email ${email}`} />
     </article>
   </div>

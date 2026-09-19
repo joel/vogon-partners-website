@@ -4,7 +4,7 @@ Static Astro site for **Vogon Partners OÜ**.
 
 Owner approved go-live on **2026-09-18**. This repo is the public site source. DNS and Cloudflare Pages binding are handled outside the repo.
 
-Canonical page meaning comes from Brand **`public-copy-v1`**, plus Owner HA/security/compliance copy (2026-09-18). Do not invent claims, client names, pricing, ROI, or a live Trip URL.
+Canonical page meaning comes from Brand **`public-copy-v1.1`**. Do not invent claims, client names, pricing, ROI, or a live Trip URL.
 
 History: the first scaffold commits were staging-only (noindex, no public DNS). That posture ended with Owner go-live approval.
 
@@ -40,9 +40,9 @@ npm run preview
 
 | Path | Notes |
 | --- | --- |
-| `/` | Homepage (positioning Candidate A) |
+| `/` | Homepage |
 | `/about` | Company facts |
-| `/services` | Two exploratory offers plus compliance coming soon |
+| `/services` | Two directions plus compliance coming soon |
 | `/services/smart-environment` | Smart environments (What we do, NucBox, Security) |
 | `/services/ai-operations` | AI-assisted operational improvement |
 | `/showroom` | Index of Trip and Move |
@@ -66,12 +66,11 @@ Primary nav: Home · Services · Showroom · Insights · Contact.
 
 ## Brand gaps noted, not filled
 
-- **Showroom index** has no dedicated public-copy block; the page assembles existing Home/Services sentences and links Trip + Move.
-- **Trip/Move “what this does not prove”** callouts restate boundaries already in public copy (product engineering is not consulting delivery or client outcomes).
+- **Showroom index** has no dedicated public-copy block; the page reuses Home product lines and links Trip + Move.
 - No Owner-supplied logo; wordmark is plain text, not a lockup.
 
 ## Stack
 
 Astro (static, TypeScript) + plain CSS design tokens (“Inspectable calm”: warm off-white, near-black ink, one muted steel accent). No UI kit, almost no motion, no analytics.
 
-Primary CTA: `mailto:joel@vogonpartners.com` with soft subjects (`Smart environment: discovery`, `AI-ops: discovery`, `Showroom: Trip/Move`, `Compliance: coming soon`).
+Primary CTA: `mailto:joel@vogonpartners.com` with subjects (`Smart environment: discovery`, `AI-ops: discovery`, `Showroom`, `Compliance: coming soon`).

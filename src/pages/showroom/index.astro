@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { links, pageTitle } from '../../data/site';
 
 const description =
-  'You can inspect how we build. Trip and Move are real applications with public source. Engineering proof, not a consulting case library.';
+  'Trip and Move are real products with public source – proof of how we build, not a slogan.';
 ---
 
 <BaseLayout title={pageTitle('Showroom')} description={description} currentPath="/showroom">
@@ -11,13 +11,7 @@ const description =
     <article class="prose-measure">
       <h1>Showroom</h1>
       <p>
-        You can inspect how we build. Trip and Move are real applications with public source: MCP
-        assistant surfaces, careful auth and tenancy, hybrid search, production-minded Rails
-        engineering.
-      </p>
-      <p>
-        Engineering proof lives in the Showroom (Trip and Move); it is not a consulting case
-        library.
+        Trip and Move are real products with public source – proof of how we build, not a slogan.
       </p>
     </article>
 
@@ -25,18 +19,18 @@ const description =
       <a class="card" href="/showroom/trip">
         <h2>Trip</h2>
         <p>
-          A collaborative trip journal (Rails) with shared memberships, media, checklists, and an
-          MCP assistant surface.
+          A collaborative trip journal: shared memberships, media, checklists, and an assistant
+          surface over MCP.
         </p>
-        <span class="card__meta">GitHub only. Live demo not linked yet</span>
+        <span class="card__meta">github.com/joel/trip · Live demo not linked yet</span>
       </a>
       <a class="card" href="/showroom/move">
         <h2>Move</h2>
         <p>
-          A collaborative moving-inventory app: pack, recognise, search, unpack, with hybrid search
-          and careful multi-tenant design.
+          A moving-inventory app: pack, recognise, search, unpack – with hybrid search and careful
+          multi-tenant design.
         </p>
-        <span class="card__meta">move-easy.org · GitHub</span>
+        <span class="card__meta">move-easy.org · github.com/joel/move</span>
       </a>
     </div>
 
